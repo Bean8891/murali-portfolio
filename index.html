@@ -1,278 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Murali | Power BI Developer</title>
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, sans-serif;
-}
-
-body{
-background:#f4f6f9;
-color:#333;
-}
-
-.header{
-background:#0f4c81;
-color:white;
-text-align:center;
-padding:60px 20px;
-}
-
-.header h1{
-font-size:48px;
-margin-bottom:10px;
-}
-
-.header h2{
-font-size:24px;
-margin-bottom:15px;
-}
-
-.header p{
-font-size:18px;
-}
-
-.container{
-width:90%;
-max-width:1200px;
-margin:auto;
-padding:30px 0;
-}
-
-.card{
-background:white;
-padding:25px;
-margin-bottom:25px;
-border-radius:12px;
-box-shadow:0 3px 10px rgba(0,0,0,0.1);
-}
-
-.card h2{
-color:#0f4c81;
-margin-bottom:15px;
-}
-
-.skills{
-display:flex;
-flex-wrap:wrap;
-gap:10px;
-}
-
-.skill{
-background:#0f4c81;
-color:white;
-padding:8px 15px;
-border-radius:20px;
-}
-
-.project{
-margin-bottom:20px;
-padding:15px;
-border-left:5px solid #0f4c81;
-background:#f9f9f9;
-}
-
-.project h3{
-margin-bottom:8px;
-}
-
-.gallery img{
-width:100%;
-margin-top:15px;
-border-radius:10px;
-border:1px solid #ddd;
-}
-
-.btn{
-display:inline-block;
-background:#0f4c81;
-color:white;
-padding:12px 20px;
-text-decoration:none;
-border-radius:6px;
-margin-top:10px;
-}
-
-.btn:hover{
-background:#08345a;
-}
-
-.footer{
-text-align:center;
-padding:30px;
-background:#0f4c81;
-color:white;
-margin-top:30px;
-}
-
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Murali V - Power BI Developer Portfolio</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .header {
+            background-color: #0b4570;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 38px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .header h2 {
+            margin: 10px 0;
+            font-size: 22px;
+            font-weight: 500;
+        }
+        .header p {
+            font-size: 14px;
+            margin-top: 15px;
+            color: #d0e1f9;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+        .card h3 {
+            color: #0b4570;
+            margin-top: 0;
+            border-bottom: 2px solid #f0f4f8;
+            padding-bottom: 10px;
+            font-size: 22px;
+        }
+        .about-text {
+            line-height: 1.6;
+            color: #555;
+            font-size: 15px;
+        }
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 15px;
+        }
+        .skill-pill {
+            background-color: #0b4570;
+            color: white;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+        .project {
+            background-color: #f8fafc;
+            border-left: 5px solid #0b4570;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border-radius: 0 4px 4px 0;
+        }
+        .project h4 {
+            margin: 0 0 8px 0;
+            color: #222;
+            font-size: 16px;
+        }
+        .project p {
+            margin: 0;
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+        .gallery {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+        .gallery img {
+            width: 30%;
+            min-width: 200px;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        .btn {
+            background-color: #0b4570;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            display: inline-block;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: background-color 0.2s;
+        }
+        .btn:hover {
+            background-color: #083354;
+        }
+        .contact p {
+            margin: 8px 0;
+            font-size: 15px;
+            color: #444;
+        }
+        .contact a {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="header">
-<h1>Murali</h1>
+    <div class="header">
+        <h1>Murali V</h1>
+        <h2>Power BI Developer</h2>
+        <p>Dashboard Development | Data Analytics | DAX | Power Query | Advanced SQL</p>
+    </div>
 
-<h2>Power BI Developer</h2>
+    <div class="container">
+        
+        <div class="card">
+            <h3>About Me</h3>
+            <p class="about-text">Results-driven Power BI Developer with 2+ years of dedicated Business Intelligence experience and a 10-year foundation in enterprise data analytics. Expertise in building scalable Star Schema data models, writing complex DAX measures, and engineering automated ETL pipelines using Power Query and advanced SQL. Proven ability to transform complex datasets into high-impact, real-time dashboards that drive strategic decision-making.</p>
+        </div>
 
-<p>
-Dashboard Development | Data Analytics | DAX |
-Power Query | Business Intelligence
-</p>
+        <div class="card">
+            <h3>Skills</h3>
+            <div class="skills-container">
+                <div class="skill-pill">Power BI Desktop & Service</div>
+                <div class="skill-pill">DAX</div>
+                <div class="skill-pill">Power Query (M)</div>
+                <div class="skill-pill">Advanced SQL</div>
+                <div class="skill-pill">Data Modeling (Star Schema)</div>
+                <div class="skill-pill">ETL Processes</div>
+                <div class="skill-pill">Row-Level Security (RLS)</div>
+                <div class="skill-pill">Dataflows</div>
+            </div>
+        </div>
 
-</div>
+        <div class="card">
+            <h3>Key Projects</h3>
+            
+            <div class="project">
+                <h4>Enterprise Power BI KPI Dashboard Suite</h4>
+                <p>Architected an end-to-end sales and operations dashboard utilizing advanced DAX for time-intelligence calculations. Built a robust Star Schema data model and implemented Row-Level Security (RLS) to ensure data privacy and targeted insights across regional managers.</p>
+            </div>
 
-<div class="container">
+            <div class="project">
+                <h4>Multi-Dept Data Integration Pipeline</h4>
+                <p>Designed a comprehensive data integration model combining production, order, and workflow data. Transformed raw cross-functional data into a unified insights panel, significantly reducing enterprise reporting turnaround time by 40% and eliminating team dependencies.</p>
+            </div>
+            
+            <div class="project">
+                <h4>Automated Production Tracking Dashboard</h4>
+                <p>Engineered automated ETL pipelines covering Pre-Alert to Order Handover stages, delivering real-time execution monitoring across 5+ cross-functional teams.</p>
+            </div>
+        </div>
 
-<div class="card">
-<h2>About Me</h2>
+        <div class="card">
+            <h3>Dashboard Gallery</h3>
+            <p style="font-size: 14px; color: #666; margin-top:0;">Click to view screenshots of my work.</p>
+            <div class="gallery">
+                <!-- IMPORTANT: Change these filenames to match the exact names of the images you uploaded to your GitHub images folder -->
+                <a href="images/dashboard1.png" target="_blank"><img src="images/dashboard1.png" alt="Sales Dashboard"></a>
+                <a href="images/dashboard2.png" target="_blank"><img src="images/dashboard2.png" alt="Operations Dashboard"></a>
+                <a href="images/dashboard3.png" target="_blank"><img src="images/dashboard3.png" alt="KPI Dashboard"></a>
+            </div>
+        </div>
 
-<p>
-Power BI Developer with experience in dashboard development,
-data modeling, DAX, Power Query, and business intelligence reporting.
+        <div class="card">
+            <h3>Resume</h3>
+            <p style="font-size: 15px; color: #555;">Download my full professional resume below.</p>
+            <!-- Make sure to upload Murali_V_Power_BI_Developer.pdf to your GitHub repository -->
+            <a href="Murali_V_Power_BI_Developer.pdf" class="btn" target="_blank">Download Resume</a>
+        </div>
 
-Experienced in Sales Analytics, Call Center Reporting,
-SEO Analytics, KPI Tracking, Executive Dashboards,
-and Operational Reporting.
-</p>
+        <div class="card contact">
+            <h3>Contact</h3>
+            <p>Email: <a href="mailto:muraligopi08@gmail.com">muraligopi08@gmail.com</a></p>
+            <p>Phone: +91 9789620604</p>
+            <p>LinkedIn: <a href="https://linkedin.com/in/YOUR_PROFILE_LINK" target="_blank">View LinkedIn Profile</a></p>
+            <p>GitHub: <a href="https://github.com/Bean8891" target="_blank">View GitHub Profile</a></p>
+        </div>
 
-</div>
-
-<div class="card">
-
-<h2>Skills</h2>
-
-<div class="skills">
-
-<span class="skill">Power BI</span>
-<span class="skill">DAX</span>
-<span class="skill">Power Query</span>
-<span class="skill">SQL</span>
-<span class="skill">Excel</span>
-<span class="skill">Data Modeling</span>
-<span class="skill">Data Visualization</span>
-<span class="skill">Business Intelligence</span>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<h2>Projects</h2>
-
-<div class="project">
-<h3>Sales Performance Dashboard</h3>
-<p>
-Revenue Analysis, Target vs Achievement,
-Agent Performance and KPI Monitoring.
-</p>
-</div>
-
-<div class="project">
-<h3>Call Center Operations Dashboard</h3>
-<p>
-Call Volume Analysis, Productivity Tracking,
-Attendance and Agent Performance Metrics.
-</p>
-</div>
-
-<div class="project">
-<h3>SEO Analytics Dashboard</h3>
-<p>
-Keyword Rankings, Organic Traffic,
-Search Visibility and Performance Tracking.
-</p>
-</div>
-
-<div class="project">
-<h3>Agent Break Monitoring Dashboard</h3>
-<p>
-Break Duration Analysis, Utilization Tracking
-and Compliance Monitoring.
-</p>
-</div>
-
-<div class="project">
-<h3>Organizational KPI Dashboard</h3>
-<p>
-Executive Reporting and Department-wise KPI Tracking.
-</p>
-</div>
-
-</div>
-
-<div class="card">
-
-<h2>Dashboard Gallery</h2>
-
-<div class="gallery">
-
-<img src="images/sales-dashboard.png" alt="Sales Dashboard">
-
-<img src="images/callcenter-dashboard.png" alt="Call Center Dashboard">
-
-<img src="images/seo-dashboard.png" alt="SEO Dashboard">
-
-</div>
-
-</div>
-
-<div class="card">
-
-<h2>Resume</h2>
-
-<p>
-Download my latest resume below.
-</p>
-
-<a href="Murali_Resume.pdf" class="btn" target="_blank">
-Download Resume
-</a>
-
-</div>
-
-<div class="card">
-
-<h2>Contact</h2>
-
-<p>Email: yourmail@gmail.com</p>
-
-<p>
-GitHub:
-<a href="https://github.com/Bean8891" target="_blank">
-Bean8891
-</a>
-</p>
-
-<p>
-LinkedIn:
-<a href="https://linkedin.com/in/your-linkedin-profile" target="_blank">
-View LinkedIn Profile
-</a>
-</p>
-
-</div>
-
-</div>
-
-<div class="footer">
-
-<p>
-© 2026 Murali | Power BI Developer
-</p>
-
-</div>
+    </div>
 
 </body>
 </html>
