@@ -15,8 +15,18 @@
         .header {
             background-color: #0b4570;
             color: white;
-            text-align: center;
             padding: 40px 20px;
+        }
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .header-text {
+            flex: 1;
         }
         .header h1 {
             margin: 0;
@@ -30,11 +40,33 @@
             font-weight: 500;
         }
         .header p {
-            font-size: 14px;
+            font-size: 15px;
             margin-top: 15px;
             color: #d0e1f9;
             font-weight: bold;
         }
+        .header-photo {
+            width: 130px;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            margin-left: 20px;
+        }
+        
+        @media (max-width: 600px) {
+            .header-content {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+            .header-photo {
+                margin-left: 0;
+                margin-bottom: 20px;
+            }
+            .header-text h1 { font-size: 30px; }
+        }
+
         .container {
             max-width: 900px;
             margin: 30px auto;
@@ -94,21 +126,40 @@
         }
         .gallery {
             display: flex;
-            gap: 15px;
+            gap: 20px;
             flex-wrap: wrap;
             margin-top: 15px;
+            justify-content: center;
         }
-        .gallery img {
+        .gallery-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             width: 30%;
-            min-width: 200px;
-            height: auto;
+            min-width: 220px;
+            margin-bottom: 15px;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            object-position: top;
             border: 1px solid #ddd;
             border-radius: 6px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            transition: transform 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
         }
-        .gallery img:hover {
-            transform: scale(1.05);
+        .gallery-item img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        .gallery-caption {
+            margin-top: 10px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #0b4570;
+            text-align: center;
         }
         .btn {
             background-color: #0b4570;
@@ -139,9 +190,15 @@
 <body>
 
     <div class="header">
-        <h1>Murali V</h1>
-        <h2>Power BI Developer</h2>
-        <p>Dashboard Development | Data Analytics | DAX | Power Query | Advanced SQL</p>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>Murali V</h1>
+                <h2>Power BI Developer</h2>
+                <p>Dashboard Development | Data Analytics | DAX | Power Query | Advanced SQL</p>
+            </div>
+            <!-- EXACT case match for Profile.jpg on GitHub -->
+            <img src="Profile.jpg" alt="Murali V" class="header-photo">
+        </div>
     </div>
 
     <div class="container">
@@ -166,39 +223,78 @@
         </div>
 
         <div class="card">
-            <h3>Key Projects</h3>
+            <h3>Key Achievements</h3>
+            <ul style="line-height: 1.6; color: #555; font-size: 15px; padding-left: 20px; margin: 0;">
+                <li style="margin-bottom: 8px;"><strong>Workflow Automation:</strong> Reduced manual data entry dependencies for 5+ operational teams by engineering automated ETL pipelines spanning the entire order lifecycle.</li>
+                <li style="margin-bottom: 8px;"><strong>Process Automation:</strong> Slashed follow-up communication delays by 100% by deploying intelligent email notification systems mapped to customer and department data.</li>
+                <li style="margin-bottom: 8px;"><strong>Reporting Optimization:</strong> Significantly reduced enterprise reporting turnaround time by 40% and eliminated data silos by developing scalable KPI tracking solutions for senior management.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Top Key Projects</h3>
             
             <div class="project">
-                <h4>Enterprise Power BI KPI Dashboard Suite</h4>
-                <p>Architected an end-to-end sales and operations dashboard utilizing advanced DAX for time-intelligence calculations. Built a robust Star Schema data model and implemented Row-Level Security (RLS) to ensure data privacy and targeted insights across regional managers.</p>
+                <h4>Sales Performance Dashboard</h4>
+                <p>Architected an end-to-end sales and operations dashboard utilizing advanced DAX for Revenue Analysis, Target vs Achievement, and Agent Performance Monitoring.</p>
             </div>
 
             <div class="project">
-                <h4>Multi-Dept Data Integration Pipeline</h4>
-                <p>Designed a comprehensive data integration model combining production, order, and workflow data. Transformed raw cross-functional data into a unified insights panel, significantly reducing enterprise reporting turnaround time by 40% and eliminating team dependencies.</p>
+                <h4>Call Center Operations Dashboard</h4>
+                <p>Built a robust Star Schema data model to integrate call volume analysis, productivity tracking, and agent attendance metrics into a unified insights panel.</p>
             </div>
             
             <div class="project">
-                <h4>Automated Production Tracking Dashboard</h4>
-                <p>Engineered automated ETL pipelines covering Pre-Alert to Order Handover stages, delivering real-time execution monitoring across 5+ cross-functional teams.</p>
+                <h4>SEO Analytics Dashboard</h4>
+                <p>Designed a comprehensive data integration model tracking keyword rankings, organic traffic, and search visibility across multiple platforms.</p>
             </div>
         </div>
 
         <div class="card">
             <h3>Dashboard Gallery</h3>
-            <p style="font-size: 14px; color: #666; margin-top:0;">Click to view screenshots of my work.</p>
+            <p style="font-size: 14px; color: #666; margin-top:0;">Click any image below to view the full resolution version.</p>
+            
             <div class="gallery">
-                <!-- IMPORTANT: Change these filenames to match the exact names of the images you uploaded to your GitHub images folder -->
-                <a href="images/dashboard1.png" target="_blank"><img src="images/Web Orders Department_Wise Dashboard.png" alt="Sales Dashboard"></a>
-                <a href="images/dashboard2.png" target="_blank"><img src="images/SEO Overview Dashboard.png" alt="Operations Dashboard"></a>
-                <a href="images/dashboard3.png" target="_blank"><img src="images/Master Dashboard_Overview Page.png"></a>
+                <div class="gallery-item">
+                    <a href="images/Master%20Dashboard_Overview%20Page.png" target="_blank">
+                        <img src="images/Master%20Dashboard_Overview%20Page.png" alt="Sales Performance Dashboard">
+                    </a>
+                    <p class="gallery-caption">Sales Performance Dashboard</p>
+                </div>
+                
+                <div class="gallery-item">
+                    <a href="images/Call%20Log%20Dashboard_Page_1.png" target="_blank">
+                        <img src="images/Call%20Log%20Dashboard_Page_1.png" alt="Call Center Operations Dashboard">
+                    </a>
+                    <p class="gallery-caption">Call Center Operations Dashboard</p>
+                </div>
+                
+                <div class="gallery-item">
+                    <a href="images/SEO%20Overview%20Dashboard.png" target="_blank">
+                        <img src="images/SEO%20Overview%20Dashboard.png" alt="SEO Analytics Dashboard">
+                    </a>
+                    <p class="gallery-caption">SEO Analytics Dashboard</p>
+                </div>
+
+                <div class="gallery-item">
+                    <a href="images/Agent_Wise%20Break_Time%20Dashboard.png" target="_blank">
+                        <img src="images/Agent_Wise%20Break_Time%20Dashboard.png" alt="Agent Break Monitoring Dashboard">
+                    </a>
+                    <p class="gallery-caption">Agent Break Monitoring Dashboard</p>
+                </div>
+
+                <div class="gallery-item">
+                    <a href="images/Department_Wise%20Orders%20%26%20Payments%20Dashboard.png" target="_blank">
+                        <img src="images/Department_Wise%20Orders%20%26%20Payments%20Dashboard.png" alt="Organizational KPI Dashboard">
+                    </a>
+                    <p class="gallery-caption">Organizational KPI Dashboard</p>
+                </div>
             </div>
         </div>
 
         <div class="card">
             <h3>Resume</h3>
             <p style="font-size: 15px; color: #555;">Download my full professional resume below.</p>
-            <!-- Make sure to upload Murali_V_Power_BI_Developer.pdf to your GitHub repository -->
             <a href="Murali_V_Power_BI_Developer.pdf" class="btn" target="_blank">Download Resume</a>
         </div>
 
